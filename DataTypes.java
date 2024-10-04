@@ -1,4 +1,6 @@
-public class DataTypeDefaults {
+/* Check default vaules & size for data types */
+
+public class DataTypes {
     // Class-level variables for default values (Instance variables)
     static byte byteVal;
     static short shortVal;

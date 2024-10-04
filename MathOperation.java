@@ -1,60 +1,63 @@
+/* Create a class MathOperation with two data member X & Y to store the operand and third data member R to store result of operation. Create Method members :
+init to input X & Y from user,
+add for addition of X & Y,
+mul to multiply X & Y,
+power,
+diaplay to display result R
+*/
+
 import java.util.Scanner;
 
 class MathOperation {
     // Data members
-    double x;
-    double y;
-    double result;
+    private double X;
+    private double Y;
+    private double R;
 
-    // Method to take input from user for x and y
     void init() {
-        Scanner s = new Scanner(System.in);
-        System.out.print("Enter the value of x: ");
-        x = s.nextDouble();
-        System.out.print("Enter the value of y: ");
-        y = s.nextDouble();
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Enter the first operand (X): ");
+        X = scn.nextDouble();
+
+        System.out.print("Enter the second operand (Y): ");
+        Y = scn.nextDouble();
     }
 
-    // Method for addition of x and y
     void add() {
-        result = x + y;
+        R = X + Y; 
     }
 
-    // Method for multiplication of x and y
     void mul() {
-        result = x * y;
+        R = X * Y;
     }
 
-    // Method for x raised to the power of y
     void power() {
-        result = Math.pow(x, y); // Using Math.pow to calculate x^y
+        R = 1;
+        for (int i = 0; i < Y; i++) {
+            R = R * X; 
+        }
     }
-
-    // Method to display the result
+    
     void display() {
-        System.out.println("The result is: " + result);
+        System.out.println("The result (R) is: " + R);
     }
 
     public static void main(String[] args) {
-        // Creating an object of the MathOperation class
         MathOperation operation = new MathOperation();
 
-        // Initialize x and y
-        operation.init();
+        // Initialize X and Y
+        operation.init(); 
 
-        // Perform addition
+        // Perform addition and display result
         operation.add();
-        System.out.print("After addition, ");
         operation.display();
 
-        // Perform multiplication
+        // Perform multiplication and display result
         operation.mul();
-        System.out.print("After multiplication, ");
         operation.display();
 
-        // Perform power operation (x^y)
+        // Calculate power and display result
         operation.power();
-        System.out.print("After raising x to the power of y, ");
         operation.display();
     }
 }

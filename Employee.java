@@ -1,33 +1,29 @@
 public class Employee {
-    // Properties of the Employee class
-    private static int empCount = 0; // Static variable to keep track of the number of employees
-    private static double totalSalary = 0; // Static variable to hold the total salary of all employees
+    private int empID;
+    private String empName;
+    private float empSalary;
 
-    private int empNo; // Employee number
-    private double salary; // Employee salary
-
-    // Parameterized constructor
-    public Employee(double salary) {
-        empCount++; // Increment employee count
-        this.empNo = empCount; // Assign employee number
-        this.salary = salary; // Set employee salary
-        totalSalary += salary; // Update total salary
+    // Method to initialize employee details with predefined values
+    public void initEmployee(){
+        empID = 111;
+        empName = "Shri";
+        empSalary = 150000.00f;
     }
 
-    // Method to display total employees and total salary
-    public static void displayTotalInfo() {
-        System.out.println("Total Employees: " + empCount);
-        System.out.println("Total Salary: " + totalSalary);
+    public void displayEmployee(){
+        System.out.println("Employee_ID = " + empID + " Employee_Name = " + empName + " Employee_Salary = " + empSalary);
     }
 
-    // Main method to test the Employee class
-    public static void main(String[] args) {
-        // Creating Employee objects
-        Employee emp1 = new Employee(50000);
-        Employee emp2 = new Employee(60000);
-        Employee emp3 = new Employee(70000);
+    public static void main(String[] args){
+        Employee  e = new Employee();
+        
+        // Display the default (uninitialized)
+        System.out.println(e.empID + " " + e.empName + " " + e.empSalary);
 
-        // Display total employee count and total salary
-        Employee.displayTotalInfo();
+        // Call initEmployee() to initialize the employee's attributes
+        e.initEmployee();
+
+        // Call displayEmployee() to print the updated employee details
+        e.displayEmployee();
     }
 }
